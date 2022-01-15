@@ -1,0 +1,592 @@
+/* Initial SetUp */
+*,*::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html
+{
+    font-size: 10px;
+    font-family: 'poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+/* Utility Classes */
+.container
+{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1em 2.5em;
+    border-radius: 50px;
+    outline: none;
+    text-decoration: none;
+    margin-top: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.btn-primary
+{
+    color: #fff;
+    background-color: #16a083;
+}
+
+
+/* ##################### Navbar Styling #################### */
+
+/* For Desktop Mode*/
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines{
+    display: none;
+}
+.navbar{
+    box-shadow: 0px 3px 10px #aaa;
+    background-color: #fff;
+    opacity: 0.8;
+    color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+.navbar-container
+{
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-items
+{
+    order: 2;
+    display: flex;
+}
+.menu-items li{
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.7rem;
+}
+.logo
+{
+    font-size: 3rem;
+    order: 1;
+}
+.navbar a
+{
+    color:#444;
+    text-decoration:none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+.navbar a:hover{
+    color: #117954;
+}
+
+
+/* ##################### Showcae section styling #################### */
+
+.showcase-area
+{
+    height: 50vh;
+    width: 100%;
+    background: linear-gradient(rgba(250,250,250,0.1),rgba(250,250,250,0.2)),url("./Images//header-image2.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.showcase-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size:1.6rem;
+}
+.main-title
+{
+    text-transform: uppercase;
+    font-size: 2.7rem;
+    margin-top: 50px;
+}
+.showcase-container p{
+    line-height: 3rem;
+    font-weight: 300;
+}
+
+
+/* ################### About Section Styling #################### */
+#about
+{
+    background-color: #f5f5f7;
+    padding: 50px;
+}
+.about-container
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+#about h2{
+    font-size: 3.2rem;
+}
+#about p{
+    font-size: 1.2rem;
+    columns: #555;
+}
+#about .small
+{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #666;
+}
+.about-image
+{
+    flex: 1 1 400px;
+    padding: 30px;
+    transform: translateX(150%);
+    animation: about-image-animation 1s ease-in-out forwards;
+}
+@keyframes about-image-animation
+{
+    100%{
+        transform: translateX(0%);
+    }
+}
+.about-image img{
+    display: block;
+    width: 400px;
+    max-width: 100%;
+    margin: auto;
+    object-fit: cover;
+    object-position: right;
+}
+.about-text
+{
+    flex: 1 1 400px;
+    margin: auto;
+    transform: translateX(-150%);
+    animation: about-text-animation 1s ease-in-out forwards;
+}
+@keyframes about-text-animation {
+    100%
+    {
+        transform: translateX(0%);
+    }
+}
+
+
+/* ###################n Food Section Styling #################### */
+#food
+{
+    padding: 5rem 0 10rem 0;
+}
+#food h2{
+    text-align:center;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: #555;
+}
+.food-container
+{
+    display: flex;
+    justify-content: space-between;
+}
+.image-container img{
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+    margin: auto;
+}
+.image-container
+{
+    margin: 0 1rem;
+    position: relative;
+}
+.img-content
+{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    text-align:center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+.img-content h3{
+    font-size: 3rem;
+    font-weight: 600;
+    color: #fff;
+}
+.img-content a{
+    font-size: 1.2rem;
+}
+.image-container::after
+{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #000000cc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: scaleY(0);
+    transform-origin: 50% 100%;
+    transition: all 0.3s ease-in-out;
+}
+.image-container:hover::after{
+    transform: scaleY(1);
+}
+.image-container:hover .img-content
+{
+    top: 50%;
+    opacity: 1;
+}
+
+
+/* #################### Food Menu Styling ################### */
+.food-menu-heading
+{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: normal;
+    color: #666;
+}
+.food-menu-container
+{
+    display: flex;
+    padding: 50px 0 30px 0;
+    flex-wrap: wrap;
+}
+.food-menu-container img
+{
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+.food-item
+{
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+}
+.food-description
+{
+    margin: auto 1.5rem;
+}
+.food-title
+{
+    font-size: 2.3rem;
+    font-weight: 400;
+    columns: #444;
+}
+.food-description p{
+    font-size: 1.4rem;
+    color:#555;
+    font-weight: 500;
+}
+.food-description .food-price
+{
+    color: #117964;
+    font-weight: 700;
+}
+
+
+/* #################### Testimonials Section Styling ####################*/
+
+#testimonials{
+    padding: 5rem 0rem;
+    background-color: #f5f5f7;
+}
+
+.testimonials-heading
+{
+    font-size: 3rem;
+    font-weight: 400;
+    color:#555;
+    text-align: center;
+}
+
+.testimonial-container
+{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    padding: 1rem;
+}
+.testimonial-box .checked{
+    color: #ff9529;
+}
+.testimonial-box{
+    padding: 1rem;
+    text-align: center;
+}
+.testimonial-box .testimonial-text
+{
+    color: #444;
+    margin: 1rem 0;
+}
+.customer-photo img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+/* #################### Contact Section Styling #################### */
+
+#contact
+{
+    padding: 5rem 0rem;
+    background-color: #efefef;
+}
+
+.contact-container
+{
+    display:flex;
+    background: #fff;
+}
+
+.contact-image
+{
+    width: 50%;
+}
+
+.contact-image img{
+    display: block;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+.form-container
+{
+    padding: 1rem;
+    width: 50%;
+    margin:auto;
+}
+
+.form-container input, .form-container textarea
+{
+    padding: 1rem 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    color: #444;
+    outline: none;
+    box-shadow: none;
+    font-weight: 500;
+}
+
+.form-container h2{
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.form-container a{
+    font-size: 1.2rem;
+}
+
+/* #################### Footer Styling #################### */
+
+footer h2{
+    font-weight: 500;
+    text-align: center;
+    padding: 3rem;
+    font-size: 2rem;
+    color: #fff;
+    background-color: rgb(65, 65, 65);
+    border-radius: 7px 7px 0 0;
+}
+
+
+
+/* #################### Media Queries For Responsive Design #################### */
+
+@media (max-width:768px)
+{
+    /* NavBar Styling */
+    .navbar{
+        opacity: 0.9;
+    }
+    .navbar-container input[type='checkbox'],
+    .navbar-container .hamburger-lines
+    {
+        display: block;
+    }
+    .navbar-container
+    {
+        display: block;
+        position: relative;
+        height: 64px;
+    }
+    .navbar-container input[type="checkbox"]
+    {
+        position: absolute;
+        width: 40px;
+        height: 32px;
+        top: 20px;
+        left: 20px;
+        display: block;
+        z-index: 5;
+        opacity: 0;
+    }
+    .navbar-container .hamburger-lines
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 3;
+    }
+    .navbar-container .hamburger-lines .line
+    {
+        display: block;
+        width: 100%;
+        height: 5px;
+        border-radius: 5px;
+        background-color: #000;
+    }
+    .navbar-container .hamburger-lines .line1
+    {
+        transform-origin: 0% 0%;
+        transition: all 0.3s ease-in-out;
+    }
+    .navbar-container .hamburger-lines .line2
+    {
+        transform-origin: 0% 0%;
+        transition: all 0.3s ease-in-out;
+    }
+    .navbar-container .hamburger-lines .line3
+    {
+        transform-origin: 0% 100%;
+        transition: all 0.3s ease-in-out;
+    }
+    .navbar-container .menu-items
+    {
+        background-color: #fff;
+        height: 100vh;
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        padding: 70px 0 0 50px;
+        margin-left: -40px;
+        transform:translateX(-150%);
+        transition: all 0.3s ease-in-out;
+        box-shadow: 5px 0 10px 0 #aaa;
+    }
+    .navbar-container .menu-items li
+    {
+        width: 90%;
+        margin-bottom: 3rem;
+        font-size: 2rem;
+        font-weight: 500;
+        border-bottom: 1px solid #aaa;
+    }
+    .navbar-container .logo{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .navbar-container input[type='checkbox']:checked ~ .menu-items
+    {
+        transform:translateX(0%);
+    }
+    .navbar-container input[type='checkbox']:checked ~ .hamburger-lines .line1
+    {
+        transform:rotate(45deg);
+    }
+    .navbar-container input[type='checkbox']:checked ~ .hamburger-lines .line2
+    {
+        /* transform: scaleY(0); */
+        display: none;
+    }
+    .navbar-container input[type='checkbox']:checked ~ .hamburger-lines .line3
+    {
+        transform: rotate(-45deg);
+    }
+
+    /* Food Section Styling */
+    .food-container{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .food-type:not(:last-child)
+    {
+        margin-bottom: 3rem;
+    }
+    .food-type{
+        box-shadow: 5px 5px 10px 0 #aaa;
+    }
+    .image-container
+    {
+        margin:0 ;
+    }
+    .image-container img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* for small Mobile devices */
+@media (max-width:500px)
+{
+    html{
+        font-size: 50%;
+    }
+    .testimonial-container{
+        flex-direction:column;
+        text-align: center;
+    }
+    .food-item{
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-between;
+    }
+    .food-image img{
+        margin: auto;
+    }
+    .contact-container{
+        flex-direction:column ;
+    }
+    .contact-image
+    {
+        width: 100%;
+    }
+    .form-container
+    {
+        width: 100%;
+    }
+}
+
+/* Landscape mode for mobile devices */
+@media (orientation:Landscape) and (max-height:500px)
+{
+    .showcase-area{
+        height: 50vmax;
+    }
+}
